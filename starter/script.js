@@ -23,18 +23,18 @@ console.log(presentHourInt);
 //$(".time-block").css("background-color","red")
 //console.log(timeBlock);
 
-// for (var i=0; i<timeBlock.length; i++) { 
-//     var eachTimeBlock = timeBlock[i] 
-//     for(var k=0; k<currentHour.length; k++){
-//         var currentHourValue = parseInt(currentHour[k].textContent)
-//         if (presentHourInt === currentHourValue){
-//             console.log(currentHour[k].textContent)
-//             $(eachTimeBlock).css("background-color","red")
-//             break;
-//         }
+for (var i=0; i<timeBlock.length; i++) { 
+    var eachTimeBlock = timeBlock[i] 
+    for(var k=0; k<currentHour.length; k++){
+        var currentHourValue = parseInt(currentHour[k].textContent)
+        if (presentHourInt === currentHourValue){
+            console.log(currentHour[k].textContent)
+            $(eachTimeBlock).css("background-color","red")
+            break;
+        }
         
-//     }  
-// };
+    }  
+};
 
 //for(var k=0; k<currentHour.length; k++)
 
@@ -58,27 +58,5 @@ console.log(presentHourInt);
 
 
 
-console.log("Present Hour (as number):", presentHourInt);
 
-for (var i = 0; i < timeBlock.length; i++) {
-    var eachTimeBlock = timeBlock[i];
-    var matchFound = false;  // Flag to track if a match is found for each time block
-
-    for (var k = 0; k < currentHour.length; k++) {
-        var currentHourValue = parseInt(currentHour[k].textContent, 10);
-
-        console.log("Comparing:", presentHourInt, currentHourValue);
-
-        if (presentHourInt === currentHourValue) {
-            if (!matchFound) {
-                console.log("Match found:", currentHour[k].textContent);
-                $(eachTimeBlock).css("background-color", "red");
-                matchFound = true;  // Set the flag to true to indicate a match is found
-            }
-
-            // Exit the loop once a match is found
-            break;
-        }
-    }
-}
 
