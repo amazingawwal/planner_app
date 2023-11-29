@@ -45,7 +45,7 @@ for (let index = 0; index < timeBlock.length; index++) {
   
 };
 
-// 3. TODO: when the saveBtn is clicked we need to save the content of the textarea into localStorage. 
+// 3. TODO: when the saveBtn is clicked need to save the content of the textarea into localStorage. 
 
 var content = JSON.parse(localStorage.getItem("taskItem")) || [];
 
@@ -85,10 +85,21 @@ function storeToLocalStorage(task){
 
 // 4. TODO: make sure the data that is stored in localStorage persists on the page. 
 
-function taskPersists (e){
-    for (var i=0; i<content.length; i++){
-        if($(e.target).siblings('textarea').val() == content[i]){
-            $(e.target).siblings('textarea').val(content[i])
-        }
+// function taskPersists (e){
+//     for (var i=0; i<content.length; i++){
+//         if($(e.target).siblings('textarea').val() == content[i]){
+//             $(e.target).siblings('textarea').val(content[i])
+//         }
+//     }
+// }
+
+function taskPersists() {
+    for (var i = 0; i < content.length; i++) {
+        var textareaElement = $("textarea").eq(i);
+        textareaElement.val(content[i]);
     }
-}
+};
+
+$(document).ready(function () {
+    taskPersists();
+});
